@@ -42,4 +42,4 @@ function adult(person) {
   }
 }
 
-adult({name: "Paty", age: 112})
+adult({name: "Paty", age: 12})
