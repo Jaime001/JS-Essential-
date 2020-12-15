@@ -30,18 +30,16 @@ function printProfession(person) {
 //printProfession(jaime)
 
 //Extra exercise 
+const ADULT_AGE = 18
+
+function adultMath(person){ return person.age >= ADULT_AGE }
 
 function adult(person) {
-  console.log(`${person.name} is:`);
-
-  if (person.age >= 18){
-    console.log("An adult!");
+  if (adultMath(person)) {
+    console.log(`${person.name} is an Adult`);
   } else {
-    console.log("not an Adult");
+    console.log(`${person.name} isn´t an Adult`);
   }
-  if (person.age > 120) {
-    console.log("And Probably dead");
-  } 
 }
 
-adult(jaime)
+adult({name: "Paty", age: 112})
