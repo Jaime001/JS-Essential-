@@ -31,6 +31,12 @@ var paty = {
 
 var people = [ximena, jaime, oswaldo, jorge, paty]
 
-for (var i = 0; i < people.length; i++){
-  console.log(`${people[i].name} has ${people[i].age} and is a ${people[i].sex}`);
-}
+// for (var i = 0; i < people.length; i++){
+//   console.log(`${people[i].name} has ${people[i].age} and is a ${people[i].sex}`);
+// }
+
+var isFemale = people =>  people.sex == "female"
+
+var femalePeople = people.filter(isFemale);
+
+console.log(femalePeople);
