@@ -20,31 +20,18 @@ function onError(id) {
   console.log(`We got an error with the character ${id}`);
 }
 //The map () method creates a new array with the results of the call to the indicated function applied to each of its elements.
-var ids = [1,2,3,4,5,6,7]
-var idsToPromise = ids.map(id =>  getCharacter(id)) //id is the current value of the function and if you return just one value you can delete the word return for the arrow function 
-Promise
-  .all(idsToPromise)
-  .then(character => console.log(character))
-  .catch(onError)
+//id is the current value of the function and if you return just one value you can delete the word return for the arrow function
 
-// getCharacter(1)
-//   .then(function(character){
-//     console.log(`The character 1 is: ${character.name}`);
-//     return getCharacter(2)
-//   })
-//   .then(function(character){
-//     console.log(`The character 2 is: ${character.name}`);
-//     return getCharacter(3)
-//   })
-//   .then(function(character){
-//     console.log(`The character 3 is: ${character.name}`);
-//     return getCharacter(4)
-//   })
-//   .then(function(character){
-//     console.log(`The character 4 is: ${character.name}`);
-//     return getCharacter(5)
-//   })
-//   .then(function(character){
-//     console.log(`The character 5 is: ${character.name}`);
-//   })
-//   .catch(onError)
+async function getCharacters () {
+  var ids = [1,2,3,4,5,6,7]
+  var idsToPromise = ids.map(id =>  getCharacter(id))  
+  try {
+    var character = await Promise.all(idsToPromise)
+    console.log(character);
+  } catch (id) {
+    onError
+  }
+}
+
+getCharacters()
+
