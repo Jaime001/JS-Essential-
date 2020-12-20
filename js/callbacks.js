@@ -17,12 +17,28 @@ function getCharacter (id) {
   })
 }
 function onError(id) {
-  console.log(`We have an error with the character ${id}`);
+  console.log(`We got an error with the character ${id}`);
 }
 
-function onResolve(character){
-  console.log(`The character 1 is: ${character.name}`);
-}
+
 getCharacter(1)
-  .then(onResolve)
+  .then(function(character){
+    console.log(`The character 1 is: ${character.name}`);
+    return getCharacter(2)
+  })
+  .then(function(character){
+    console.log(`The character 2 is: ${character.name}`);
+    return getCharacter(3)
+  })
+  .then(function(character){
+    console.log(`The character 3 is: ${character.name}`);
+    return getCharacter(4)
+  })
+  .then(function(character){
+    console.log(`The character 4 is: ${character.name}`);
+    return getCharacter(5)
+  })
+  .then(function(character){
+    console.log(`The character 5 is: ${character.name}`);
+  })
   .catch(onError)
