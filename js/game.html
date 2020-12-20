@@ -102,13 +102,25 @@
       class Game {
         constructor(){
           this.initilize()
+          this.generateRandom()
         }
         initilize(){
           btnStart.classList.add('hide')
+          this.level = 1
+          this.colors = {
+            celeste,
+            violet,
+            orange,
+            green
+          }
+        }
+        generateRandom(){ //we generate the random attribute and match them to an array of new random ones from 0 to 3
+          this.random = new Array(10).fill(0).map(i => Math.floor(Math.random() * 4))//The fill method fills the array with 0 and we pass the array to the map method and fill them with randoms
+          //The .floor method rounds down the random numbers 
         }
       }
       function startGame(){
-        var game = new Game
+         window.game = new Game
       }
     </script>
   </body>
