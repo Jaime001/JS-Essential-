@@ -1,5 +1,4 @@
 const TALL_VAR = 1.8
-
 class Person {
   constructor(name, lastName, height, nationality) {
     this.name = name
