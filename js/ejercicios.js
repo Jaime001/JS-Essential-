@@ -6,9 +6,12 @@ description.innerHTML = "Listado de cosas "
 
 //Como obtener elementos por Clase
 
-const items = document.getElementsByClassName('list-group-item')//El getElementsByClassName devuelve un listado(array) de los objetos con esa clase
+//const items = document.getElementsByClassName('list-group-item')//El getElementsByClassName devuelve un listado(array) de los objetos con esa clase
+const items = document.getElementsByTagName('li')
+
 for (let i = 0; i < items.length; i++) {
-  let elements = items[i];
-  console.log(elements);
-  
+  if (i % 2 == 0) {
+    let elements = items[i];
+    elements.style.background = '#f2f2f2'
+  }
 }
