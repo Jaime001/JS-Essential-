@@ -14,10 +14,9 @@ for (let i = 0; i < items.length; i++) {
   elements.style.background = '#f2f2f2'
 }
 
-const element = document.querySelector('div.row > ul.list-group > li')
 const list = document.querySelector('ul')
 
-console.log(list.childElementCount); //Cuenta los elementos hijos que tiene
+//  console.log(list.childElementCount); //Cuenta los elementos hijos que tiene
 //podemos recorrer la lista de esta manera o solo indicar el indice [0],[1],[3] etc
 for (let index = 0; index < list.children.length; index++) {
   //console.log(list.children[index]);
@@ -26,3 +25,9 @@ for (let index = 0; index < list.children.length; index++) {
 console.log(list.firstElementChild.innerHTML); //primer elemnto hijo de la lista
 console.log(list.lastElementChild.innerHTML); //ultimo elemento hijo de la lista
 
+const element = document.querySelector('div.row > ul.list-group > li')
+console.log(element.parentElement); //padre del elemnto
+console.log(element.nextElementSibling); //hermano(el siguiente elemento)
+
+const lastElement = document.getElementById('lastChild')
+console.log(lastElement.previousElementSibling);
