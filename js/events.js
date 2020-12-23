@@ -26,3 +26,9 @@ button.addEventListener('mouseenter', function(e){
 button.addEventListener('mouseout', function(e){
   e.target.className = 'btn btn-primary'
 })
+//SetTimeput nos ayuda a ejecutar un bloque de codigo estableciendo un tiempo de respuesta para la ejecucion
+setTimeout(function(a1,a2,a3){
+  console.log(a1);
+  console.log(a2);
+  console.log(a3);
+}, 3000, "hola", "Como", "estas")
