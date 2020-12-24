@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-    <script src="js/keyboardEvents.js" defer></script>
+    <script src="js/DefaultEvent.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
     <title>java script</title>
 </head>
 <body>
@@ -22,10 +23,15 @@
     <div class="jumbotron">
         <h2 class="display-2" id="title">Titulo</h2>
         <p class="description_container" id="description">Breve descripcion</p>
-        <form id="create-course">
+        <form id="course-form">
             <div id="form-group">
-                <input type="text" class="form-control" id="input" placeholder="Titulo">
+                <input type="text" class="form-control" id="title-form" placeholder="Titulo">
             </div>
+            <div id="form-group">
+                <input type="text" class="form-control margin-prom" id="description-form" placeholder="Descripcion">
+                <small id="description-help" class="fomr-text text-muted">Escribe un breve descripcion</small>
+            </div>
+            <button type="submit" id="create-course" class="btn btn-primary margin-prom">Crear curso</button>
         </form>
     </div>
 
