@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simon Says</title>
+    <style>
+      body {
+        margin: 0;
+        background: #dedede;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .gameboard {
+        height: 100vh;
+        width: 100vh;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        max-height: 60vh;
+        max-width: 60vh;
+      }
+
+      .color {
+        width: 50%;
+        height: 50%;
+        display: inline-block;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: left;
+      }
+
+      .celeste {
+        background: #22a6b3;
+      }
+
+      .celeste.light {
+        background: #7ed6df;
+      }
+
+      .violet {
+        background: #be2edd;
+      }
+
+      .violt.light {
+        background: #e056fd;
+      }
+
+      .orange {
+        background: #f0932b;
+      }
+
+      .orange.light {
+        background: #ffbe76;
+      }
+
+      .green {
+        background: #6ab04c;
+      }
+
+      .green.light {
+        background: #badc58;
+      }
+
+      .btn-start {
+        width: 400px;
+        height: 100px;
+        background: #ecf0f1;
+        color: #2c3e50;
+        font-size: 2.5rem;
+        position: absolute;
+        top: calc(50% - 50px);
+        left: calc(50% - 200px);
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gameboard">
+      <div id="celeste" class="color celeste left" data-color="celeste"></div>
+      <div id="violet" class="color violet right" data-color="violet"></div>
+      <div id="orange" class="color orange left" data-color="orange"></div>
+      <div id="green" class="color green right" data-color="green"></div>
+      <button id="btnStart" class="btn-start" onclick="startGame()">Let's Play!</button>
+    </div>
+    <script>
+      const celeste   = document.getElementById('celeste')
+      const violet   = document.getElementById('violet')
+      const orange   = document.getElementById('orange')
+      const green   = document.getElementById('green')
+      const btnStart   = document.getElementById('btnStart')
+
+      class Game {
+        constructor(){
+          this.initilize()
+          this.generateRandom()
+        }
+        initilize(){
+          btnStart.classList.add('hide')
+          this.level = 1
+          this.colors = {
+            celeste,
+            violet,
+            orange,
+            green
+          }
+        }
+        generateRandom(){ //we generate the random attribute and match them to an array of new random ones from 0 to 3
+          this.random = new Array(10).fill(0).map(i => Math.floor(Math.random() * 4))//The fill method fills the array with 0 and we pass the array to the map method and fill them with randoms
+          //The .floor method rounds down the random numbers 
+        }
+      }
+      function startGame(){
+         window.game = new Game
+      }
+    </script>
+  </body>
+</html>
